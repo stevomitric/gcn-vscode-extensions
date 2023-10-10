@@ -18,8 +18,10 @@ export function run(): Promise<void> {
 
 	const testsRoot = path.resolve(__dirname, '..');
 
+	const globPattern = process.env["TEST_GLOB_PATTER"] ? process.env["TEST_GLOB_PATTER"] : "**/*.test.js";
+
 	return new Promise((c, e) => {
-		glob('**/**.test.js', { cwd: testsRoot }, (err, files) => {
+		glob(globPattern, { cwd: testsRoot }, (err, files) => {
 			if (err) {
 				return e(err);
 			}
