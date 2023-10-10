@@ -51,7 +51,7 @@ suite('Extension Test Suite', function() {
 
         /* Wait for the NBLS to start */
 	// the timeout will propagate to beforeAll hook
-	this.timeout(30000);
+	this.timeout(300000);
 	this.beforeAll(async () => {
 	        await waitForStatup(wf![0]);
 	});
